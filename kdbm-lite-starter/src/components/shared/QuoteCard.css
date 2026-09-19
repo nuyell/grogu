@@ -1,0 +1,96 @@
+.quote-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 2rem 1.5rem;
+  background: var(--color-surface-card);
+  border: 2px dashed rgba(43, 168, 162, 0.25);
+  border-radius: var(--radius-lg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  text-align: center;
+  width: 100%;
+}
+
+.quote-card:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-glow-teal);
+}
+
+.quote-mark {
+  font-size: 4rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  opacity: 0.2;
+  line-height: 1;
+  position: absolute;
+}
+
+.quote-card .quote-mark {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.quote-emoji {
+  font-size: 2.25rem;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.08));
+}
+
+.quote-text {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1.4;
+  margin: 0.5rem 0;
+}
+
+.quote-card-large .quote-text {
+  font-size: 1.3rem;
+}
+
+.quote-card-small .quote-text {
+  font-size: 0.95rem;
+}
+
+.quote-label {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .quote-card {
+    padding: 1.75rem 1.2rem;
+  }
+
+  .quote-emoji {
+    font-size: 1.8rem;
+  }
+
+  .quote-text {
+    font-size: 1rem;
+  }
+
+  .quote-mark {
+    font-size: 3.25rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .quote-card {
+    padding: 1.5rem 1rem;
+    border-radius: var(--radius-md);
+  }
+
+  .quote-emoji {
+    font-size: 1.5rem;
+  }
+
+  .quote-text {
+    font-size: 0.9rem;
+  }
+}

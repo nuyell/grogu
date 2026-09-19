@@ -1,0 +1,176 @@
+/* === Interactive Grogu === */
+.interactive-grogu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.grogu-character {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 2rem 2.5rem;
+  background: var(--color-surface-card);
+  border-radius: var(--radius-lg);
+  border: 2px dashed rgba(43, 168, 162, 0.25);
+  transition: border-color 0.3s, box-shadow 0.3s;
+  box-shadow: var(--shadow-card);
+}
+
+.grogu-character.state-hungry {
+  border-color: rgba(43, 168, 162, 0.4);
+  box-shadow: var(--shadow-glow-teal);
+}
+
+.grogu-character.state-happy,
+.grogu-character.state-playing {
+  border-color: rgba(255, 210, 63, 0.5);
+  box-shadow: var(--shadow-glow-gold);
+}
+
+.grogu-character.state-loved {
+  border-color: rgba(93, 173, 226, 0.5);
+  box-shadow: var(--shadow-glow-sky);
+}
+
+.grogu-character.state-sleepy {
+  border-color: rgba(239, 108, 74, 0.4);
+  box-shadow: var(--shadow-glow-coral);
+}
+
+.grogu-emoji {
+  font-size: 5rem;
+  display: block;
+}
+
+.grogu-character.animating .grogu-emoji {
+  animation: grogu-bounce 0.8s ease-in-out;
+}
+
+@keyframes grogu-bounce {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.25); }
+  50% { transform: scale(0.95); }
+  75% { transform: scale(1.1); }
+}
+
+.grogu-character.state-sleepy .grogu-emoji {
+  animation: grogu-yawn 3s ease-in-out infinite;
+}
+
+@keyframes grogu-yawn {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-4px) rotate(-3deg); }
+  75% { transform: translateY(-4px) rotate(3deg); }
+}
+
+.grogu-reaction {
+  font-size: 1.05rem;
+  color: var(--color-primary-dark);
+  text-align: center;
+  margin: 0;
+  min-height: 1.5rem;
+  font-weight: 600;
+}
+
+.grogu-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.85rem;
+}
+
+.grogu-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.85rem 1.2rem;
+  background: var(--color-surface-card);
+  color: var(--color-text-primary);
+  border: 2px dashed rgba(43, 168, 162, 0.2);
+  border-radius: var(--radius-full);
+  transition: background-color 0.2s, border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  min-width: 100px;
+  min-height: 44px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.grogu-btn:hover {
+  background-color: var(--color-primary-bg);
+  border-color: var(--color-primary);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-glow-teal);
+}
+
+.grogu-btn:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.grogu-btn.active {
+  border-style: solid;
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-glow-gold);
+}
+
+.grogu-btn-emoji {
+  font-size: 1.8rem;
+}
+
+.grogu-btn-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .interactive-grogu {
+    padding: 1.5rem;
+  }
+
+  .grogu-emoji {
+    font-size: 4rem;
+  }
+
+  .grogu-btn {
+    padding: 0.7rem 1rem;
+    min-width: 85px;
+    min-height: 44px;
+  }
+
+  .grogu-btn-emoji {
+    font-size: 1.5rem;
+  }
+
+  .grogu-btn-label {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .grogu-emoji {
+    font-size: 3.5rem;
+  }
+
+  .grogu-btn {
+    padding: 0.6rem 0.85rem;
+    min-width: 70px;
+    min-height: 44px;
+    border-radius: var(--radius-full);
+  }
+
+  .grogu-btn-emoji {
+    font-size: 1.3rem;
+  }
+
+  .grogu-btn-label {
+    font-size: 0.7rem;
+  }
+}

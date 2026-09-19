@@ -1,0 +1,160 @@
+:root {
+  --color-primary: #2BA8A2;
+  --color-primary-light: #3CC4BD;
+  --color-primary-dark: #1E8C86;
+  --color-primary-bg: #E8F6F5;
+
+  --color-accent: #FFD23F;
+  --color-accent-light: #FFE47A;
+  --color-accent-dark: #E6B800;
+
+  --color-coral: #EF6C4A;
+  --color-coral-light: #FF8A6A;
+  --color-coral-dark: #D45233;
+
+  --color-cream: #FFF8E7;
+  --color-sky: #5DADE2;
+
+  --color-surface-base: #EFF8F7;
+  --color-surface-card: #FFFFFF;
+
+  --color-success: #27AE60;
+  --color-error: #E74C3C;
+
+  --color-text-primary: #1a1a2e;
+  --color-text-secondary: #5a5a6e;
+  --color-text-muted: #8a8a9e;
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 36px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 2px 8px rgba(43, 168, 162, 0.08);
+  --shadow-md: 0 4px 16px rgba(43, 168, 162, 0.12);
+  --shadow-lg: 0 8px 32px rgba(43, 168, 162, 0.16);
+  --shadow-card: 0 2px 12px rgba(43, 168, 162, 0.1), 0 8px 24px rgba(43, 168, 162, 0.06);
+  --shadow-glow-teal: 0 0 24px rgba(43, 168, 162, 0.25);
+  --shadow-glow-gold: 0 0 24px rgba(255, 210, 63, 0.3);
+  --shadow-glow-coral: 0 0 24px rgba(239, 108, 74, 0.25);
+  --shadow-glow-sky: 0 0 24px rgba(93, 173, 226, 0.25);
+
+  --font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Comic Sans MS', 'Chalkboard SE', sans-serif;
+
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-stack);
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  background-color: var(--color-surface-base);
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+p {
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+button:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.08); }
+}
+
+@keyframes starTwinkle {
+  0%, 100% { opacity: 0.3; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.04); }
+}
+
+@keyframes cloudDrift {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(20px); }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.7s ease-out both;
+}
+
+.section-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.section-animate.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-animate {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

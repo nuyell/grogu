@@ -1,0 +1,78 @@
+.fact-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 1.5rem;
+  background: var(--card-accent, var(--color-surface-card));
+  border: 2px dashed rgba(43, 168, 162, 0.25);
+  border-radius: var(--radius-lg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  max-width: 280px;
+  text-align: center;
+  width: 100%;
+}
+
+.fact-card:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-glow-teal);
+}
+
+.fact-emoji {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  background: var(--color-primary-bg);
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+.fact-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.fact-label {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+}
+
+.fact-text {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .fact-card {
+    max-width: 220px;
+    padding: 1.75rem 1.2rem;
+  }
+
+  .fact-emoji {
+    width: 52px;
+    height: 52px;
+    font-size: 1.5rem;
+  }
+
+  .fact-label {
+    font-size: 0.95rem;
+  }
+
+  .fact-text {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .fact-card {
+    max-width: 180px;
+    padding: 1.5rem 1rem;
+  }
+}
